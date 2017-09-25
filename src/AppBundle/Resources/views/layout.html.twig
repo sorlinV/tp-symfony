@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% block header %}
+        {% include "AppBundle::header.html.twig" %}
+    {% endblock header%}
+    {% block content %}
+        {% include "AppBundle::menu.html.twig" %}
+    {% endblock content %}
+    {% block footer %}
+        {% include "AppBundle::footer.html.twig" %}
+    {% endblock footer %}
+{% endblock body %}

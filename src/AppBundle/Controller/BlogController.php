@@ -13,11 +13,11 @@ class BlogController extends Controller
     // [...]
     
     /**
-     * @Route("/blog/{year}/{title}/{_locale}",
+     * @Route("/blog/{year}/{title}",
      *     defaults={"_locale": "en"}, requirements={
      *         "year": "\d{4}",
      *         "title": "^[a-zA-Z0-9-]+$",
-     *         "_locale": "en|fr"
+     *         "_locale": "en|fr|ru"
      *     })
      */
     public function numberAction($_locale, $year, $title)
