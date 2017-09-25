@@ -4,9 +4,13 @@
     {% block header %}
         {% include "AppBundle::header.html.twig" %}
     {% endblock header%}
-    {% block content %}
+    {% block menu %}
         {% include "AppBundle::menu.html.twig" %}
+    {% endblock menu %}
+
+    {% block content %}
     {% endblock content %}
+    
     {% block footer %}
         {% include "AppBundle::footer.html.twig" %}
     {% endblock footer %}

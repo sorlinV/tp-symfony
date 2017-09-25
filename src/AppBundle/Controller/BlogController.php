@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BlogController extends Controller
 {
-    // [...]
     
     /**
      * @Route("/blog/{year}/{title}",
