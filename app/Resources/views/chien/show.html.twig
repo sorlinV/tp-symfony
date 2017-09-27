@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Chien</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chien.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ chien.name }}</td>
+            </tr>
+            <tr>
+                <th>Race</th>
+                <td>{{ chien.race }}</td>
+            </tr>
+            <tr>
+                <th>Born</th>
+                <td>{% if chien.born %}{{ chien.born|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Weigth</th>
+                <td>{{ chien.weigth }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('chien_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('chien_edit', { 'id': chien.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

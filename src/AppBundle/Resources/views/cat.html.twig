@@ -1,8 +1,10 @@
 <ul>
-    <li><h3>{{cat.name}}</h3><li>
-    <li>{{cat.id}}<li>
-    <li>{{cat.color}}<li>
-    <li>{{cat.age}}<li>
-    <li>{{cat.master}}<li>
-    <li>{{cat.mouseKilled}}<li>
+    <li><h3>{{cat.name}}</h3></li>
+    <li>{{cat.id}}</li>
+    <li>{{cat.color}}</li>
+    <li>{{cat.age}}</li>
+    <li>{{cat.master}}</li>
+    <li>{{cat.mouseKilled}}</li>
+    <li>{{cat.date.format("Y-m-d\TH:i:sP")}}</li>
+    <li>Edit :<a href="{{ path('edit_cat', {'id': cat.id}) }}">ICI</a></li>
 </ul>
