@@ -24,11 +24,13 @@ class ApiController extends Controller
     private function to_jsonify($objs) {
         $jsonobjs = [];
         foreach($objs as $obj) {
+            $props = get_class_methods($obj);
             $tmp = [];
-            var_dump($obj);
-            foreach ($obj as $key=>$value) {
-                var_dump($obj[$key]);
-                $tmp[$key] = $value;
+            foreach ($props as $prop) {
+                if (substr($prop, 0, 3) === "get") {
+                    $tmp[substr($prop, 3)] = $obj->$prop();
+                    echo "tmp[".lcfirst(substr($prop, 3))."] = obj->".$prop . "()\n";
+                }
             }
             $jsonobjs[] = $tmp;
         }
